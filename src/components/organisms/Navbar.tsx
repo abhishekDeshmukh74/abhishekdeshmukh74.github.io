@@ -165,6 +165,7 @@ const Navbar = () => {
               href={profile.github}
               target="_blank"
               rel="noopener noreferrer"
+              aria-label="GitHub profile"
               whileHover={{ scale: 1.15, y: -2 }}
               whileTap={{ scale: 0.9 }}
               className="p-2 rounded-full bg-white/10 border border-white/20 hover:bg-pista hover:border-pista transition-all duration-300"
@@ -175,6 +176,7 @@ const Navbar = () => {
               href={profile.linkedin}
               target="_blank"
               rel="noopener noreferrer"
+              aria-label="LinkedIn profile"
               whileHover={{ scale: 1.15, y: -2 }}
               whileTap={{ scale: 0.9 }}
               className="p-2 rounded-full bg-white/10 border border-white/20 hover:bg-pista hover:border-pista transition-all duration-300"
@@ -193,6 +195,8 @@ const Navbar = () => {
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.9 }}
               onClick={() => setMobileView(!mobileView)}
+              aria-label="Open navigation menu"
+              aria-expanded={mobileView}
               className="p-2 rounded-full bg-black/10 backdrop-blur-sm border border-white/20 hover:bg-pista transition-all duration-300"
             >
               <Menu size={24} color="#FFFFFF" />

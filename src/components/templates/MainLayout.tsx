@@ -35,7 +35,7 @@ const MainLayout = ({ children }: MainLayoutProps) => {
     };
   }, []);
 
-  const springConfig = { stiffness: 150, damping: 15, mass: 0.1 };
+  const springConfig = { stiffness: 800, damping: 50, mass: 0.1 };
   const cursorXSpring = useSpring(cursorX, springConfig);
   const cursorYSpring = useSpring(cursorY, springConfig);
 
@@ -132,11 +132,10 @@ const MainLayout = ({ children }: MainLayoutProps) => {
               height="32"
               viewBox="0 0 24 24"
               className="drop-shadow-lg"
-              animate={{
+              style={{
                 filter:
                   "drop-shadow(0 0 8px rgba(0, 240, 80, 0.8)) brightness(1.2)",
               }}
-              transition={{ duration: 0.2 }}
             >
               <path
                 fill="#00F050"

@@ -13,13 +13,13 @@ const SectionHeading = ({
 }: SectionHeadingProps) => {
   return (
     <>
-      <h1
+      <h2
         className={`text-5xl md:text-6xl font-extrabold tracking-wide text-center ${headingClassName}`}
       >
         <span className="text-white/30 font-light">&lt;</span>
         <span className="text-[#00f050]"> {title} </span>
         <span className="text-white/30 font-light">/&gt;</span>
-      </h1>
+      </h2>
       <hr
         className={`border-[#00f050] border-t-2 w-24 my-6 mx-auto ${hrClassName}`}
       />

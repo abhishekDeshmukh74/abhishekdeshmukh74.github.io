@@ -110,7 +110,6 @@ export const slugs: string[] = [
     "amazonwebservices",
     "firebase",
     "nginx",
-    "vercel",
     "docker",
     "git",
     "github",

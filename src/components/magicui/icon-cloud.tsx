@@ -89,8 +89,8 @@ export default function IconCloud({
           imageArray.length > 0 &&
           imageArray.map((image, index) => {
             return (
-              <a key={index} href="#" onClick={(e) => e.preventDefault()}>
-                <img height="42" width="42" alt="A globe" src={image} />
+              <a key={index} href="#" onClick={(e) => e.preventDefault()} aria-hidden="true" tabIndex={-1}>
+                <img height="42" width="42" alt="" src={image} />
               </a>
             );
           })}
