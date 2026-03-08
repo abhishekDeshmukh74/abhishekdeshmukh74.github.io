@@ -86,6 +86,7 @@ const ProjectCard = ({ project, index }: ProjectCardProps) => {
             href={project.source_code_link}
             target="_blank"
             rel="noopener noreferrer"
+            aria-label={`View source code for ${project.name} on GitHub`}
             className="p-2 bg-gray-900/80 backdrop-blur-sm rounded-full border border-gray-600/50 hover:bg-gray-800/80 transition-colors"
           >
             <Github className="w-4 h-4 text-white" />
@@ -95,6 +96,7 @@ const ProjectCard = ({ project, index }: ProjectCardProps) => {
               href={project.live_link}
               target="_blank"
               rel="noopener noreferrer"
+              aria-label={`View live demo of ${project.name}`}
               className="p-2 bg-gray-900/80 backdrop-blur-sm rounded-full border border-gray-600/50 hover:bg-gray-800/80 transition-colors"
             >
               <LinkIcon className="w-4 h-4 text-white" />
