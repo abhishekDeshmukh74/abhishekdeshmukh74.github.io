@@ -54,6 +54,7 @@ const HeroSection = () => {
               <img
                 src={me}
                 alt={profile.name}
+                loading="eager"
                 className="w-full h-full rounded-full object-cover object-top"
               />
             </div>

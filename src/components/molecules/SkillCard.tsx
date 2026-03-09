@@ -18,6 +18,7 @@ const SkillCard = ({ img, name }: SkillItem) => {
           height="32"
           alt={`${name} logo`}
           src={img}
+          loading="lazy"
         />
         <figcaption className="text-sm font-medium text-white text-center leading-tight">
           {name}

@@ -65,6 +65,7 @@ const ProjectCard = ({ project, index }: ProjectCardProps) => {
           ref={imageRef}
           src={project.image}
           alt={project.name}
+          loading="lazy"
           className="w-full h-full object-cover will-change-transform"
         />
         <div

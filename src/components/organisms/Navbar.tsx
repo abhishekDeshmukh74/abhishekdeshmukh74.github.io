@@ -143,6 +143,7 @@ const Navbar = () => {
               width={60}
               height={60}
               alt="logo"
+              loading="eager"
             />
           </motion.div>
 
