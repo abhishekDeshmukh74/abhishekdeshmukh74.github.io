@@ -28,6 +28,7 @@ export interface Profile {
     github: string;
     linkedin: string;
     twitter: string;
+    leetcode: string;
     portfolioUrl: string;
     about: string;
 }
@@ -75,7 +76,8 @@ export const profile: Profile = {
     resumeUrl: "https://drive.google.com/file/d/1iZrJrlJTAS5oeltL1jU_qdlD58iN7B-o/view?usp=drive_link",
     github: "https://github.com/abhishekDeshmukh74",
     linkedin: "https://www.linkedin.com/in/abhishek-deshmukh-dev/",
-    twitter: "https://twitter.com/4bhi__deshmukh",
+    twitter: "https://x.com/4bhi__deshmukh",
+    leetcode: "https://leetcode.com/u/M0r9h3u5/",
     portfolioUrl: "https://www.abhishekdeshmukh.com",
     about: `Gen AI + full-stack developer with 8.5 years of experience across startups, service-based, and product-based companies. I work as a Full Stack Software Engineer creating cutting-edge services and sleek user experiences — specialising in React, Next.js, Node.js, TypeScript, and Java Spring Boot, with a strong focus on Gen AI features using LLMs, LangGraph, and AI workflows. My experience spans architecture design, performance optimisation, microservices, cloud (AWS, Firebase), and real-world AI integrations. I thrive on learning new technologies and consistently challenge myself to deliver client-focused engineering and impactful product features.`,
 };

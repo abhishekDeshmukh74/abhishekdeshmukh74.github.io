@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import logo from "../../assets/logo.png";
 import { navigationLinks } from "../../info/index";
-import { profile } from "../../constants";
 import {
   motion,
   AnimatePresence,
@@ -9,7 +8,7 @@ import {
   useTransform,
   type Variants,
 } from "motion/react";
-import { Menu, Github, Linkedin } from "lucide-react";
+import { Menu } from "lucide-react";
 
 const Navbar = () => {
   const [mobileView, setMobileView] = useState(false);
@@ -179,36 +178,6 @@ const Navbar = () => {
               </motion.li>
             ))}
           </motion.ul>
-
-          <motion.div
-            initial={{ scale: 0 }}
-            animate={{ scale: 1 }}
-            transition={{ delay: 0.4, type: "spring", stiffness: 200 }}
-            className="hidden md:flex items-center gap-3 flex-shrink-0"
-          >
-            <motion.a
-              href={profile.github}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="GitHub profile"
-              whileHover={{ scale: 1.15, y: -2 }}
-              whileTap={{ scale: 0.9 }}
-              className="p-2 rounded-full bg-white/10 border border-white/20 hover:bg-pista hover:border-pista transition-all duration-300"
-            >
-              <Github size={18} color="#FFFFFF" />
-            </motion.a>
-            <motion.a
-              href={profile.linkedin}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="LinkedIn profile"
-              whileHover={{ scale: 1.15, y: -2 }}
-              whileTap={{ scale: 0.9 }}
-              className="p-2 rounded-full bg-white/10 border border-white/20 hover:bg-pista hover:border-pista transition-all duration-300"
-            >
-              <Linkedin size={18} color="#FFFFFF" />
-            </motion.a>
-          </motion.div>
 
           <motion.div
             initial={{ scale: 0 }}

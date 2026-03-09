@@ -108,13 +108,13 @@ const ProjectsSection = () => {
         <div className='text-center mb-16'>
           <h2
             ref={titleRef}
-            className='text-4xl md:text-6xl text-pista font-montserrat-extrabold mb-6 will-change-transform'
+            className='text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-pista font-montserrat-extrabold mb-6 will-change-transform'
           >
             Featured Projects
           </h2>
           <p
             ref={subtitleRef}
-            className='text-white text-lg md:text-xl max-w-3xl font-montserrat mx-auto leading-relaxed will-change-transform'
+            className='text-gray-300 text-sm sm:text-base md:text-lg lg:text-xl max-w-3xl font-montserrat mx-auto leading-relaxed will-change-transform'
           >
             A selection of projects spanning full-stack development, Gen AI integrations, and modern web experiences
           </p>
