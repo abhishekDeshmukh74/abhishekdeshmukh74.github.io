@@ -1,5 +1,6 @@
 import React from "react";
 import { motion, type Variants } from "motion/react";
+import { Github, Linkedin, Mail } from "lucide-react";
 import me from "../../assets/me.png";
 import { profile } from "../../constants";
 
@@ -161,7 +162,7 @@ const HeroSection = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 1.5 }}
-            className="flex gap-10 justify-center md:justify-start items-center"
+            className="flex flex-wrap gap-4 justify-center md:justify-start items-center"
           >
             <motion.a
               href={profile.resumeUrl}
@@ -177,6 +178,40 @@ const HeroSection = () => {
             >
               GET RESUME
             </motion.a>
+
+            <div className="flex items-center gap-3">
+              <motion.a
+                href={profile.github}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="GitHub profile"
+                whileHover={{ scale: 1.15, y: -2 }}
+                whileTap={{ scale: 0.9 }}
+                className="p-3 rounded-full bg-white/10 border border-white/20 hover:bg-pista hover:border-pista transition-all duration-300"
+              >
+                <Github size={20} color="#FFFFFF" />
+              </motion.a>
+              <motion.a
+                href={profile.linkedin}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="LinkedIn profile"
+                whileHover={{ scale: 1.15, y: -2 }}
+                whileTap={{ scale: 0.9 }}
+                className="p-3 rounded-full bg-white/10 border border-white/20 hover:bg-pista hover:border-pista transition-all duration-300"
+              >
+                <Linkedin size={20} color="#FFFFFF" />
+              </motion.a>
+              <motion.a
+                href={`mailto:${profile.email}`}
+                aria-label="Send email"
+                whileHover={{ scale: 1.15, y: -2 }}
+                whileTap={{ scale: 0.9 }}
+                className="p-3 rounded-full bg-white/10 border border-white/20 hover:bg-pista hover:border-pista transition-all duration-300"
+              >
+                <Mail size={20} color="#FFFFFF" />
+              </motion.a>
+            </div>
           </motion.div>
         </motion.div>
       </motion.div>

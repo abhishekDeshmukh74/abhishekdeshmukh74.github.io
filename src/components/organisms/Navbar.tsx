@@ -14,6 +14,7 @@ import { Menu, Github, Linkedin } from "lucide-react";
 const Navbar = () => {
   const [mobileView, setMobileView] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [activeSection, setActiveSection] = useState("home");
 
   const { scrollY } = useScroll();
   const widthValue = useTransform(scrollY, [0, 200], ["50%", "100%"]);
@@ -24,6 +25,25 @@ const Navbar = () => {
     };
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setActiveSection(entry.target.id);
+          }
+        });
+      },
+      { rootMargin: "-30% 0px -70% 0px", threshold: 0 }
+    );
+    const sectionIds = navigationLinks.map((l) => l.id);
+    sectionIds.forEach((id) => {
+      const el = document.getElementById(id);
+      if (el) observer.observe(el);
+    });
+    return () => observer.disconnect();
   }, []);
 
   const handleScroll = (id: string) => {
@@ -142,12 +162,17 @@ const Navbar = () => {
                 className="relative group"
                 onClick={() => handleScroll(link.id)}
               >
-                <span className="relative z-10 text-sm lg:text-base font-medium transition-colors duration-300 group-hover:text-pista">
+                <span
+                  className={`relative z-10 text-sm lg:text-base font-medium transition-colors duration-300 group-hover:text-pista ${
+                    activeSection === link.id ? "text-pista" : "text-white/80"
+                  }`}
+                >
                   {link.title}
                 </span>
                 <motion.div
                   className="absolute inset-x-0 -bottom-1 h-0.5 bg-gradient-to-r from-pista to-blue-400 rounded-full"
                   initial={{ scaleX: 0 }}
+                  animate={{ scaleX: activeSection === link.id ? 1 : 0 }}
                   whileHover={{ scaleX: 1 }}
                   transition={{ duration: 0.3 }}
                 />
@@ -240,9 +265,27 @@ const Navbar = () => {
                       }}
                       className="group"
                     >
-                      <div className="flex items-center space-x-3 p-3 rounded-xl bg-white/5 hover:bg-white/10 transition-all duration-300">
-                        <div className="w-2 h-2 rounded-full bg-pista group-hover:scale-125 transition-transform" />
-                        <span className="text-white text-lg font-medium group-hover:text-pista transition-colors">
+                      <div
+                        className={`flex items-center space-x-3 p-3 rounded-xl transition-all duration-300 ${
+                          activeSection === link.id
+                            ? "bg-pista/10 border border-pista/30"
+                            : "bg-white/5 hover:bg-white/10"
+                        }`}
+                      >
+                        <div
+                          className={`w-2 h-2 rounded-full transition-transform ${
+                            activeSection === link.id
+                              ? "bg-pista scale-125"
+                              : "bg-pista/50 group-hover:bg-pista group-hover:scale-125"
+                          }`}
+                        />
+                        <span
+                          className={`text-lg font-medium transition-colors ${
+                            activeSection === link.id
+                              ? "text-pista"
+                              : "text-white group-hover:text-pista"
+                          }`}
+                        >
                           {link.title}
                         </span>
                       </div>

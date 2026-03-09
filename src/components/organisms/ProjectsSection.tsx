@@ -3,6 +3,7 @@ import { Github } from "lucide-react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { projects } from "../../info/index";
+import { profile } from "../../constants";
 import ProjectCard from "../molecules/ProjectCard";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -115,8 +116,7 @@ const ProjectsSection = () => {
             ref={subtitleRef}
             className='text-white text-lg md:text-xl max-w-3xl font-montserrat mx-auto leading-relaxed will-change-transform'
           >
-            Discover my latest work showcasing full-stack development with Django, DRF, React, and
-            modern web technologies
+            A selection of projects spanning full-stack development, Gen AI integrations, and modern web experiences
           </p>
           <div className='mt-8 flex justify-center'>
             <div
@@ -141,7 +141,7 @@ const ProjectsSection = () => {
           <div ref={ctaRef} className='will-change-transform'>
             <p className='text-gray-400 mb-6'>Want to see more of my work?</p>
             <a
-              href='https://github.com/abhishekDeshmukh74'
+              href={profile.github}
               target='_blank'
               rel='noopener noreferrer'
               className='inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-green-600 to-green-600 text-white font-medium rounded-full hover:from-green-500 hover:to-green-500 transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-green-500/25'

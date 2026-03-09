@@ -57,8 +57,21 @@
   cursor : none;
 }
 
-::-webkit-scrollbar{
-  display : none
+::-webkit-scrollbar {
+  width: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 240, 80, 0.4);
+  border-radius: 2px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 240, 80, 0.7);
 }
 
 body {

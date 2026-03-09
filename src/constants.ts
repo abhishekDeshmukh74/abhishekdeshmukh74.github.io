@@ -85,10 +85,10 @@ export const profile: Profile = {
 // ---------------------------------------------------------------------------
 
 export const navigationLinks: NavigationLink[] = [
-    { id: "home",     title: "Home"     },
-    { id: "about",    title: "About"    },
-    { id: "skills",   title: "Skills"   },
+    { id: "home",       title: "Home"       },
+    { id: "about",      title: "About"      },
     { id: "experience", title: "Experience" },
+    { id: "skills",     title: "Skills"     },
     { id: "projects",   title: "Projects"   },
 ];
 
@@ -130,8 +130,7 @@ export const experiences: Experience[] = [
         date: "December 2024 – Present",
         points: [
             "Built ElasticGPT, a GenAI-powered internal assistant using React, JavaScript, and Python, deeply integrated with Elastic's stack for real-time insights.",
-            "Designed and implemented GenAI workflows using LangGraph, enabling stateful conversational flows, multi-agent orchestration, and tool-driven reasoning.",
-            "Contract position via Trigent Software Pvt. Ltd.",
+            "Designed and implemented GenAI workflows using LangGraph, enabling stateful conversational flows, multi-agent orchestration, and tool-driven reasoning."
         ],
     },
     {

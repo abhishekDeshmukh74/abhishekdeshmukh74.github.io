@@ -1,6 +1,7 @@
-import React, { useEffect, useRef, useCallback, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { motion, useMotionValue, useSpring, useScroll } from "motion/react";
 import { profile } from "../../constants";
+import { ArrowUp } from "lucide-react";
 import type { ReactNode } from "react";
 
 interface MainLayoutProps {
@@ -11,6 +12,7 @@ const MainLayout = ({ children }: MainLayoutProps) => {
   const barRef = useRef<HTMLDivElement>(null);
   const [isMobile, setIsMobile] = useState(false);
   const [barHeight, setBarHeight] = useState(0);
+  const [showScrollTop, setShowScrollTop] = useState(false);
   const cursorX = useMotionValue(0);
   const cursorY = useMotionValue(0);
 
@@ -33,6 +35,12 @@ const MainLayout = ({ children }: MainLayoutProps) => {
       ro.disconnect();
       window.removeEventListener("resize", measure);
     };
+  }, []);
+
+  useEffect(() => {
+    const onScroll = () => setShowScrollTop(window.scrollY > 400);
+    window.addEventListener("scroll", onScroll);
+    return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
   const springConfig = { stiffness: 800, damping: 50, mass: 0.1 };
@@ -147,6 +155,21 @@ const MainLayout = ({ children }: MainLayoutProps) => {
           </motion.div>
         </motion.div>
       )}
+
+      {/* Scroll-to-top button */}
+      <motion.button
+        onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+        initial={{ opacity: 0, scale: 0 }}
+        animate={{ opacity: showScrollTop ? 1 : 0, scale: showScrollTop ? 1 : 0 }}
+        transition={{ duration: 0.3, ease: "easeOut" }}
+        aria-label="Scroll to top"
+        className="fixed bottom-8 right-8 z-50 p-3 rounded-full bg-pista text-black shadow-lg shadow-pista/30 hover:bg-pista/90 transition-colors sm:block hidden"
+        style={{ pointerEvents: showScrollTop ? "auto" : "none" }}
+        whileHover={{ scale: 1.1, y: -2 }}
+        whileTap={{ scale: 0.9 }}
+      >
+        <ArrowUp size={20} />
+      </motion.button>
 
       {children}
     </div>
