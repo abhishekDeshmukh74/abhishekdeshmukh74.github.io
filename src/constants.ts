@@ -1,6 +1,4 @@
-﻿// ---------------------------------------------------------------------------
-// PERSONAL PROFILE — Edit this file to make the portfolio yours
-// ---------------------------------------------------------------------------
+﻿import type { Profile, NavigationLink, Experience, Project, SkillItem } from './types';
 
 const meliotis  = '/assets/projects/meliotis.png';
 const learnera  = '/assets/projects/learnera.png';
@@ -14,55 +12,10 @@ const brototype    = '/assets/tools/brototype.png';
 const web          = '/assets/tools/web.png';
 const extentia     = '/assets/extentia.jpg';
 const creditSuisse = '/credit-suisse.png';
-
-// ---------------------------------------------------------------------------
-// Interfaces
-// ---------------------------------------------------------------------------
-
-export interface Profile {
-    name: string;
-    displayName: string;
-    greeting: string;
-    title: string;
-    tagline: string[];
-    email: string;
-    resumeUrl: string;
-    github: string;
-    linkedin: string;
-    twitter: string;
-    leetcode: string;
-    portfolioUrl: string;
-    about: string;
-}
-
-export interface NavigationLink {
-    id: string;
-    title: string;
-}
-
-export interface Experience {
-    title: string;
-    company_name: string;
-    icon: string;
-    iconBg: string;
-    date: string;
-    points: string[];
-}
-
-export interface Project {
-    name: string;
-    description: string;
-    tags: string[];
-    image: string;
-    source_code_link: string;
-    live_link?: string;
-    category: string;
-}
-
-export interface SkillItem {
-    name: string;
-    img: string;
-}
+const avaya        = '/assets/avaya.png';
+const elastic      = '/assets/elastic.svg';
+const affinidi     = '/assets/affinidi.jpg';
+const odekAppcraft = '/assets/odek-appcraft.jpg';
 
 // ---------------------------------------------------------------------------
 // Profile
@@ -129,7 +82,7 @@ export const experiences: Experience[] = [
     {
         title: "Gen AI / Full Stack Developer",
         company_name: "Elastic (via Trigent Software Pvt. Ltd.)",
-        icon: brototype,
+        icon: elastic,
         iconBg: "#E6DEDD",
         date: "December 2024 – Present",
         points: [
@@ -140,7 +93,7 @@ export const experiences: Experience[] = [
     {
         title: "Software Engineer III (Senior Full Stack Engineer)",
         company_name: "Avaya",
-        icon: web,
+        icon: avaya,
         iconBg: "#E6DEDD",
         date: "October 2023 – December 2024",
         points: [
@@ -152,7 +105,7 @@ export const experiences: Experience[] = [
     {
         title: "Senior Full Stack Engineer",
         company_name: "Affinidi",
-        icon: web,
+        icon: affinidi,
         iconBg: "#E6DEDD",
         date: "September 2022 – July 2023",
         points: [
@@ -176,7 +129,7 @@ export const experiences: Experience[] = [
     {
         title: "Product Engineer (Full Stack Engineer)",
         company_name: "ODEK APPCRAFT",
-        icon: web,
+        icon: odekAppcraft,
         iconBg: "#E6DEDD",
         date: "December 2018 – April 2020",
         points: [
@@ -196,18 +149,18 @@ export const experiences: Experience[] = [
             "Developed a conference PWA in the MEAN stack — REST APIs in Node.js/TypeScript and frontend in Angular 2+.",
         ],
     },
-    {
-        title: "Full Stack Developer",
-        company_name: "ForceClose Technologies",
-        icon: web,
-        iconBg: "#E6DEDD",
-        date: "July 2015 – June 2017",
-        points: [
-            "Developed an Android notice board app for college and various small web projects.",
-            "CMS development using PHP; SEO auditing and penetration testing.",
-            "Built FitCRM as a college project — a full CRM system.",
-        ],
-    },
+    // {
+    //     title: "Full Stack Developer",
+    //     company_name: "ForceClose Technologies",
+    //     icon: web,
+    //     iconBg: "#E6DEDD",
+    //     date: "July 2015 – June 2017",
+    //     points: [
+    //         "Developed an Android notice board app for college and various small web projects.",
+    //         "CMS development using PHP; SEO auditing and penetration testing.",
+    //         "Built FitCRM as a college project — a full CRM system.",
+    //     ],
+    // },
 ];
 
 // ---------------------------------------------------------------------------
@@ -239,14 +192,14 @@ export const projects: Project[] = [
         source_code_link: "https://github.com/abhishekDeshmukh74/slack-clone",
         category: "Full Stack",
     },
-    {
-        name: "LinkedIn Clone",
-        description: "A LinkedIn clone built with React and Firebase, featuring user authentication, real-time posts and feeds, and a modern responsive UI that mirrors the core LinkedIn experience.",
-        tags: ["React JS", "Firebase", "JavaScript", "CSS"],
-        image: learnera,
-        source_code_link: "https://github.com/abhishekDeshmukh74/linkedin-clone",
-        category: "Full Stack",
-    },
+    // {
+    //     name: "LinkedIn Clone",
+    //     description: "A LinkedIn clone built with React and Firebase, featuring user authentication, real-time posts and feeds, and a modern responsive UI that mirrors the core LinkedIn experience.",
+    //     tags: ["React JS", "Firebase", "JavaScript", "CSS"],
+    //     image: learnera,
+    //     source_code_link: "https://github.com/abhishekDeshmukh74/linkedin-clone",
+    //     category: "Full Stack",
+    // },
     {
         name: "Spotify Clone",
         description: "A Spotify-inspired music streaming UI built with React and TypeScript, featuring playlist browsing, player controls, and a clean responsive interface that replicates Spotify's core user experience.",
@@ -255,14 +208,14 @@ export const projects: Project[] = [
         source_code_link: "https://github.com/abhishekDeshmukh74/spotify-clone",
         category: "Frontend",
     },
-    {
-        name: "WhatsApp Clone",
-        description: "A real-time WhatsApp-style chat application built with TypeScript, featuring instant messaging, contact lists, and a familiar chat interface with modern web technologies.",
-        tags: ["TypeScript", "React JS", "Firebase"],
-        image: timetrack,
-        source_code_link: "https://github.com/abhishekDeshmukh74/whatsapp-clone",
-        category: "Full Stack",
-    },
+    // {
+    //     name: "WhatsApp Clone",
+    //     description: "A real-time WhatsApp-style chat application built with TypeScript, featuring instant messaging, contact lists, and a familiar chat interface with modern web technologies.",
+    //     tags: ["TypeScript", "React JS", "Firebase"],
+    //     image: timetrack,
+    //     source_code_link: "https://github.com/abhishekDeshmukh74/whatsapp-clone",
+    //     category: "Full Stack",
+    // },
     // {
     //     name: "Portfolio Website",
     //     description: "Personal developer portfolio built with TypeScript and modern web technologies, showcasing projects, skills, and experience. Features a clean, performant design with smooth interactions.",

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-const logo = "/assets/logo.png";
+const logo = "/logo.png";
 import { navigationLinks } from "../../info/index";
 import {
   motion,
