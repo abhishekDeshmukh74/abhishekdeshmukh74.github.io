@@ -2,16 +2,18 @@
 // PERSONAL PROFILE — Edit this file to make the portfolio yours
 // ---------------------------------------------------------------------------
 
-import meliotis from './assets/projects/meliotis.png';
-import learnera from './assets/projects/learnera.png';
-import nike from './assets/projects/nike.png';
-import codblog from './assets/projects/codblog.png';
-import rdcrud from './assets/projects/rdcrud.png';
-import timetrack from './assets/projects/timetrack.png';
-import netflix from './assets/projects/netflix.png';
-import vchat from './assets/projects/vchat.png';
-import brototype from './assets/tools/brototype.png';
-import web from './assets/tools/web.png';
+const meliotis  = '/assets/projects/meliotis.png';
+const learnera  = '/assets/projects/learnera.png';
+const nike      = '/assets/projects/nike.png';
+const codblog   = '/assets/projects/codblog.png';
+const rdcrud    = '/assets/projects/rdcrud.png';
+const timetrack = '/assets/projects/timetrack.png';
+const netflix   = '/assets/projects/netflix.png';
+const vchat     = '/assets/projects/vchat.png';
+const brototype    = '/assets/tools/brototype.png';
+const web          = '/assets/tools/web.png';
+const extentia     = '/assets/extentia.jpg';
+const creditSuisse = '/credit-suisse.png';
 
 // ---------------------------------------------------------------------------
 // Interfaces
@@ -162,7 +164,7 @@ export const experiences: Experience[] = [
     {
         title: "Full Stack Developer",
         company_name: "Credit Suisse",
-        icon: web,
+        icon: creditSuisse,
         iconBg: "#E6DEDD",
         date: "April 2020 – September 2022",
         points: [
@@ -186,7 +188,7 @@ export const experiences: Experience[] = [
     {
         title: "Full Stack Engineer",
         company_name: "Extentia Information Technology",
-        icon: web,
+        icon: extentia,
         iconBg: "#E6DEDD",
         date: "December 2017 – December 2018",
         points: [

@@ -1,7 +1,7 @@
 import React from "react";
 import { motion, type Variants } from "motion/react";
 import { Github, Linkedin, Mail } from "lucide-react";
-import me from "../../assets/me.png";
+const me = "/assets/me.png";
 import { profile } from "../../constants";
 
 const HeroSection = () => {
