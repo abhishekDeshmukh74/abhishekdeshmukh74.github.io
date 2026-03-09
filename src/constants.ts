@@ -8,6 +8,8 @@ const rdcrud    = '/assets/projects/rdcrud.png';
 const timetrack = '/assets/projects/timetrack.png';
 const netflix   = '/assets/projects/netflix.png';
 const vchat     = '/assets/projects/vchat.png';
+const stockSeller  = '/assets/projects/stock-seller.png';
+const amazonClone  = '/assets/projects/amazon-clone.png';
 const brototype    = '/assets/tools/brototype.png';
 const web          = '/assets/tools/web.png';
 const extentia     = '/assets/extentia.jpg';
@@ -169,11 +171,21 @@ export const experiences: Experience[] = [
 
 export const projects: Project[] = [
     {
+        name: "Stock Seller",
+        description: "A Next.js application for stock price monitoring, analysis, and automated trading recommendations with real-time notifications. Tracks NSE and US markets, provides DMA analysis, volatility stop-loss calculations, watchlist management, and smart buy/sell recommendations powered by batch processing and Firebase Cloud Messaging.",
+        tags: ["Next.js", "TypeScript", "MongoDB", "React", "TailwindCSS", "Firebase"],
+        image: stockSeller,
+        source_code_link: "https://github.com/abhishekDeshmukh74/stock-seller",
+        live_link: "https://stock-seller.vercel.app/",
+        category: "Full Stack",
+    },
+    {
         name: "Amazon Clone",
-        description: "A full-featured Amazon Clone built with Next.js, Redux Toolkit, Firebase, Stripe, and Tailwind CSS. Includes product listings, cart management, Stripe-powered checkout, and Firebase authentication for a seamless e-commerce experience.",
-        tags: ["Next.js", "Redux Toolkit", "Firebase", "Stripe", "TailwindCSS", "JavaScript"],
-        image: meliotis,
+        description: "A full-featured e-commerce web app inspired by Amazon, built with Next.js, Redux Toolkit, Firebase, NextAuth, Tailwind CSS, and Stripe. Features Google & email authentication, dynamic product listings, Redux-powered cart, secure Stripe checkout with webhooks, order tracking, and SSR for SEO and performance.",
+        tags: ["Next.js", "Redux Toolkit", "Firebase", "Stripe", "TailwindCSS", "NextAuth"],
+        image: amazonClone,
         source_code_link: "https://github.com/abhishekDeshmukh74/amazon-clone",
+        live_link: "https://amazon-clone-beige-six.vercel.app/",
         category: "Full Stack",
     },
     {
@@ -184,14 +196,14 @@ export const projects: Project[] = [
         source_code_link: "https://github.com/abhishekDeshmukh74/google-docs-clone",
         category: "Full Stack",
     },
-    {
-        name: "Slack Clone",
-        description: "A feature-rich Slack Clone built with ReactJS, Redux for state management, Styled Components for theming, and Firebase for real-time messaging and authentication.",
-        tags: ["React JS", "Redux", "Firebase", "Styled Components", "JavaScript"],
-        image: vchat,
-        source_code_link: "https://github.com/abhishekDeshmukh74/slack-clone",
-        category: "Full Stack",
-    },
+    // {
+    //     name: "Slack Clone",
+    //     description: "A feature-rich Slack Clone built with ReactJS, Redux for state management, Styled Components for theming, and Firebase for real-time messaging and authentication.",
+    //     tags: ["React JS", "Redux", "Firebase", "Styled Components", "JavaScript"],
+    //     image: vchat,
+    //     source_code_link: "https://github.com/abhishekDeshmukh74/slack-clone",
+    //     category: "Full Stack",
+    // },
     // {
     //     name: "LinkedIn Clone",
     //     description: "A LinkedIn clone built with React and Firebase, featuring user authentication, real-time posts and feeds, and a modern responsive UI that mirrors the core LinkedIn experience.",
@@ -200,14 +212,14 @@ export const projects: Project[] = [
     //     source_code_link: "https://github.com/abhishekDeshmukh74/linkedin-clone",
     //     category: "Full Stack",
     // },
-    {
-        name: "Spotify Clone",
-        description: "A Spotify-inspired music streaming UI built with React and TypeScript, featuring playlist browsing, player controls, and a clean responsive interface that replicates Spotify's core user experience.",
-        tags: ["React JS", "TypeScript", "CSS"],
-        image: netflix,
-        source_code_link: "https://github.com/abhishekDeshmukh74/spotify-clone",
-        category: "Frontend",
-    },
+    // {
+    //     name: "Spotify Clone",
+    //     description: "A Spotify-inspired music streaming UI built with React and TypeScript, featuring playlist browsing, player controls, and a clean responsive interface that replicates Spotify's core user experience.",
+    //     tags: ["React JS", "TypeScript", "CSS"],
+    //     image: netflix,
+    //     source_code_link: "https://github.com/abhishekDeshmukh74/spotify-clone",
+    //     category: "Frontend",
+    // },
     // {
     //     name: "WhatsApp Clone",
     //     description: "A real-time WhatsApp-style chat application built with TypeScript, featuring instant messaging, contact lists, and a familiar chat interface with modern web technologies.",
