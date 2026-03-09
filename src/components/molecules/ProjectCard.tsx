@@ -2,7 +2,7 @@ import React, { useState, useRef, useEffect } from "react";
 import { cn } from "@/lib/utils";
 import { Github, LinkIcon } from "lucide-react";
 import { gsap } from "gsap";
-import type { Project } from "../../constants";
+import type { Project } from "../../types";
 import TagBadge from "../atoms/TagBadge";
 
 interface ProjectCardProps {
@@ -115,7 +115,7 @@ const ProjectCard = ({ project, index }: ProjectCardProps) => {
           {project.description}
         </p>
         <div className="flex flex-wrap gap-2">
-          {project.tags.map((tag, tagIndex) => (
+          {project.tags.map((tag: string, tagIndex: number) => (
             <TagBadge key={tagIndex} tag={tag} />
           ))}
         </div>

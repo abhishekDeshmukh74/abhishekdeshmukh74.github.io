@@ -1,5 +1,5 @@
 import React from "react";
-import type { Experience } from "../../constants";
+import type { Experience } from "../../types";
 
 interface ExperienceCardProps {
   experience: Experience;
@@ -38,7 +38,7 @@ const ExperienceCard = ({ experience }: ExperienceCardProps) => {
 
       {/* Points */}
       <ul className="space-y-2.5">
-        {experience.points.map((point, i) => (
+        {experience.points.map((point: string, i: number) => (
           <li key={i} className="flex items-start gap-3">
             <span className="mt-2 w-1.5 h-1.5 rounded-full bg-pista flex-shrink-0" />
             <p className="text-gray-300 text-sm md:text-base leading-relaxed font-montserrat">

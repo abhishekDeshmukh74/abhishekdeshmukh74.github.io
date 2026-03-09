@@ -1,6 +1,6 @@
 import React from "react";
 import { cn } from "@/lib/utils";
-import type { SkillItem } from "../../constants";
+import type { SkillItem } from "../../types";
 
 const SkillCard = ({ img, name }: SkillItem) => {
   return (
