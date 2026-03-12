@@ -8,8 +8,9 @@ const rdcrud    = '/assets/projects/rdcrud.png';
 const timetrack = '/assets/projects/timetrack.png';
 const netflix   = '/assets/projects/netflix.png';
 const vchat     = '/assets/projects/vchat.png';
-const stockSeller  = '/assets/projects/stock-seller.png';
-const amazonClone  = '/assets/projects/amazon-clone.png';
+const stockSeller      = '/assets/projects/stock-seller.png';
+const amazonClone      = '/assets/projects/amazon-clone.png';
+const prReviewerAgent  = '/assets/projects/pr-reviewer-agent.png';
 const brototype    = '/assets/tools/brototype.png';
 const web          = '/assets/tools/web.png';
 const extentia     = '/assets/extentia.jpg';
@@ -170,6 +171,15 @@ export const experiences: Experience[] = [
 // ---------------------------------------------------------------------------
 
 export const projects: Project[] = [
+    {
+        name: "PR Reviewer Agent",
+        description: "A monorepo with a React (Vite + TypeScript) frontend and Python FastAPI + LangGraph backend that reviews pull request diffs using a multi-agent AI pipeline. Paste a diff or GitHub PR URL to get real-time, grouped code review comments across bugs, security, performance, and readability — powered by LangChain and OpenAI with SSE streaming.",
+        tags: ["React", "TypeScript", "Python", "FastAPI", "LangGraph", "LangChain", "OpenAI"],
+        image: prReviewerAgent,
+        source_code_link: "https://github.com/abhishekDeshmukh74/pr-reviewer-agent",
+        live_link: "https://pr-reviewer-xznn.onrender.com/",
+        category: "Gen AI",
+    },
     {
         name: "Stock Seller",
         description: "A Next.js application for stock price monitoring, analysis, and automated trading recommendations with real-time notifications. Tracks NSE and US markets, provides DMA analysis, volatility stop-loss calculations, watchlist management, and smart buy/sell recommendations powered by batch processing and Firebase Cloud Messaging.",
