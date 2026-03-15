@@ -11,6 +11,7 @@ const vchat     = '/assets/projects/vchat.png';
 const stockSeller      = '/assets/projects/stock-seller.png';
 const amazonClone      = '/assets/projects/amazon-clone.png';
 const prReviewerAgent  = '/assets/projects/pr-reviewer-agent.png';
+const passAts          = '/assets/projects/pass-ats.png';
 const brototype    = '/assets/tools/brototype.png';
 const web          = '/assets/tools/web.png';
 const extentia     = '/assets/extentia.jpg';
@@ -171,6 +172,15 @@ export const experiences: Experience[] = [
 // ---------------------------------------------------------------------------
 
 export const projects: Project[] = [
+    {
+        name: "Pass ATS",
+        description: "An AI-powered ATS resume tailor — upload your resume (PDF or LaTeX), paste or URL a job description, and a 7-agent LangGraph pipeline rewrites your resume to be ATS-optimised. The pipeline extracts keywords, analyses gaps, rewrites in-place, QA validates, scores before and after, and produces a final PDF — all powered by Groq (llama-3.3-70b) or Gemini.",
+        tags: ["React", "TypeScript", "Python", "FastAPI", "LangGraph", "Groq AI", "MongoDB"],
+        image: passAts,
+        source_code_link: "https://github.com/abhishekDeshmukh74/pass-ats",
+        live_link: "https://pass-ats.onrender.com/",
+        category: "Gen AI",
+    },
     {
         name: "PR Reviewer Agent",
         description: "A monorepo with a React (Vite + TypeScript) frontend and Python FastAPI + LangGraph backend that reviews pull request diffs using a multi-agent AI pipeline. Paste a diff or GitHub PR URL to get real-time, grouped code review comments across bugs, security, performance, and readability — powered by LangChain and OpenAI with SSE streaming.",
