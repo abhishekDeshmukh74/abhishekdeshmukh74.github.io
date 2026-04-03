@@ -4,15 +4,15 @@ import { Code, Database, Palette, Globe } from "lucide-react";
 
 const getTagIcon = (tag: string) => {
   const t = tag.toLowerCase();
-  if (t.includes("react") || t.includes("jsx")) return <Code className="w-3 h-3" />;
+  if (t.includes("react") || t.includes("jsx")) return <Code className="w-3 h-3" aria-hidden="true" />;
   if (t.includes("django") || t.includes("drf") || t.includes("python") || t.includes("fastapi"))
-    return <Database className="w-3 h-3" />;
+    return <Database className="w-3 h-3" aria-hidden="true" />;
   if (t.includes("css") || t.includes("tailwind") || t.includes("shad cn") || t.includes("framer motion"))
-    return <Palette className="w-3 h-3" />;
-  if (t.includes("html") || t.includes("js")) return <Globe className="w-3 h-3" />;
-  if (t.includes("postgres") || t.includes("mongodb")) return <Database className="w-3 h-3" />;
-  if (t.includes("firebase") || t.includes("google auth")) return <Globe className="w-3 h-3" />;
-  return <Code className="w-3 h-3" />;
+    return <Palette className="w-3 h-3" aria-hidden="true" />;
+  if (t.includes("html") || t.includes("js")) return <Globe className="w-3 h-3" aria-hidden="true" />;
+  if (t.includes("postgres") || t.includes("mongodb")) return <Database className="w-3 h-3" aria-hidden="true" />;
+  if (t.includes("firebase") || t.includes("google auth")) return <Globe className="w-3 h-3" aria-hidden="true" />;
+  return <Code className="w-3 h-3" aria-hidden="true" />;
 };
 
 const getTagColor = (tag: string) => {

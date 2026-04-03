@@ -33,6 +33,8 @@ export interface Project {
     description: string;
     tags: string[];
     image: string;
+    video?: string;
+    screenshots?: string[];
     source_code_link: string;
     live_link?: string;
     category: string;

@@ -103,6 +103,7 @@ const Navbar = () => {
         initial={{ opacity: 0, y: -100 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, ease: "easeIn" }}
+        aria-label="Main navigation"
         className="fixed top-0 left-0 right-0 z-40 flex items-center justify-center px-4 md:px-6"
       >
         <motion.div
@@ -142,7 +143,7 @@ const Navbar = () => {
               src={logo}
               width={60}
               height={60}
-              alt="logo"
+              alt="Abhishek Deshmukh — Home"
               loading="eager"
             />
           </motion.div>
@@ -157,18 +158,17 @@ const Navbar = () => {
               <motion.li
                 key={link.id}
                 variants={itemVariants}
-                whileHover={{ scale: 1.05, y: -2 }}
-                whileTap={{ scale: 0.95 }}
                 className="relative group"
-                onClick={() => handleScroll(link.id)}
               >
-                <span
-                  className={`relative z-10 text-sm lg:text-base font-medium transition-colors duration-300 group-hover:text-pista ${
+                <button
+                  onClick={() => handleScroll(link.id)}
+                  className={`relative z-10 text-sm lg:text-base font-medium transition-colors duration-300 bg-transparent border-none cursor-pointer group-hover:text-pista ${
                     activeSection === link.id ? "text-pista" : "text-white/80"
                   }`}
+                  aria-current={activeSection === link.id ? "true" : undefined}
                 >
                   {link.title}
-                </span>
+                </button>
                 <motion.div
                   className="absolute inset-x-0 -bottom-1 h-0.5 bg-gradient-to-r from-pista to-blue-400 rounded-full"
                   initial={{ scaleX: 0 }}
@@ -190,8 +190,9 @@ const Navbar = () => {
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.9 }}
               onClick={() => setMobileView(!mobileView)}
-              aria-label="Open navigation menu"
+              aria-label={mobileView ? "Close navigation menu" : "Open navigation menu"}
               aria-expanded={mobileView}
+              aria-controls="mobile-nav-menu"
               className="p-2 rounded-full bg-black/10 backdrop-blur-sm border border-white/20 hover:bg-pista transition-all duration-300"
             >
               <Menu size={24} color="#FFFFFF" />
@@ -208,6 +209,8 @@ const Navbar = () => {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               onClick={() => setMobileView(false)}
+              onKeyDown={(e: React.KeyboardEvent) => e.key === 'Escape' && setMobileView(false)}
+              role="presentation"
               className="fixed inset-0 bg-black/60 backdrop-blur-sm z-40 md:hidden"
             />
 
@@ -218,7 +221,7 @@ const Navbar = () => {
               exit="exit"
               className="fixed top-24 left-4 right-4 z-50 md:hidden"
             >
-              <div className="bg-black/90 backdrop-blur-xl rounded-2xl border border-white/20 p-6 shadow-2xl">
+              <div id="mobile-nav-menu" role="menu" className="bg-black/90 backdrop-blur-xl rounded-2xl border border-white/20 p-6 shadow-2xl">
                 <motion.ul
                   className="space-y-4"
                   variants={mobileMenuVariants}
@@ -227,14 +230,15 @@ const Navbar = () => {
                     <motion.li
                       key={link.id}
                       variants={mobileItemVariants}
-                      whileHover={{ x: 8 }}
-                      whileTap={{ scale: 0.98 }}
-                      onClick={() => {
-                        setMobileView(false);
-                        handleScroll(link.id);
-                      }}
+                      role="menuitem"
                       className="group"
                     >
+                      <button
+                        onClick={() => {
+                          setMobileView(false);
+                          handleScroll(link.id);
+                        }}
+                        className="w-full text-left bg-transparent border-none cursor-pointer p-0">
                       <div
                         className={`flex items-center space-x-3 p-3 rounded-xl transition-all duration-300 ${
                           activeSection === link.id
@@ -259,6 +263,7 @@ const Navbar = () => {
                           {link.title}
                         </span>
                       </div>
+                      </button>
                     </motion.li>
                   ))}
                 </motion.ul>

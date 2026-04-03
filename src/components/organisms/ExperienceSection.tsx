@@ -91,7 +91,7 @@ const ExperienceSection = () => {
                     transition={{ delay: 0.1, type: "spring", stiffness: 200 }}
                     className="w-10 h-10 rounded-full border-2 border-pista bg-black flex items-center justify-center"
                   >
-                    <div className="w-3 h-3 rounded-full bg-pista" />
+                    <div className="w-3 h-3 rounded-full bg-pista" aria-hidden="true" />
                   </motion.div>
                 </div>
 

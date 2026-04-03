@@ -40,7 +40,7 @@ const ExperienceCard = ({ experience }: ExperienceCardProps) => {
       <ul className="space-y-2.5">
         {experience.points.map((point: string, i: number) => (
           <li key={i} className="flex items-start gap-3">
-            <span className="mt-2 w-1.5 h-1.5 rounded-full bg-pista flex-shrink-0" />
+            <span className="mt-2 w-1.5 h-1.5 rounded-full bg-pista flex-shrink-0" aria-hidden="true" />
             <p className="text-gray-300 text-sm md:text-base leading-relaxed font-montserrat">
               {point}
             </p>

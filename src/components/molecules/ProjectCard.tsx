@@ -1,9 +1,6 @@
 import React, { useState, useRef, useEffect } from "react";
-import { cn } from "@/lib/utils";
-import { Github, LinkIcon } from "lucide-react";
-import { gsap } from "gsap";
+import { ArrowUpRight, Play, Pause } from "lucide-react";
 import type { Project } from "../../types";
-import TagBadge from "../atoms/TagBadge";
 
 interface ProjectCardProps {
   project: Project;
@@ -11,113 +8,141 @@ interface ProjectCardProps {
 }
 
 const ProjectCard = ({ project, index }: ProjectCardProps) => {
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const [isPlaying, setIsPlaying] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
-  const cardRef = useRef<HTMLDivElement>(null);
-  const imageRef = useRef<HTMLImageElement>(null);
+  const hasVideo = !!project.video;
+
+  const togglePlay = () => {
+    if (videoRef.current) {
+      if (isPlaying) {
+        videoRef.current.pause();
+      } else {
+        videoRef.current.play();
+      }
+      setIsPlaying(!isPlaying);
+    }
+  };
 
   useEffect(() => {
-    const card = cardRef.current;
-    const image = imageRef.current;
-    if (!card || !image) return;
+    if (!hasVideo) return;
+    if (isHovered && videoRef.current) {
+      videoRef.current.play();
+      setIsPlaying(true);
+    } else if (!isHovered && videoRef.current) {
+      videoRef.current.pause();
+      setIsPlaying(false);
+    }
+  }, [isHovered, hasVideo]);
 
-    const handleMouseEnter = () => {
-      gsap.to(card, {
-        boxShadow: "0 25px 50px -12px rgba(0, 240, 80, 0.3)",
-        duration: 0.5,
-        ease: "power2.out",
-      });
-      gsap.to(image, { scale: 1.15, duration: 0.8, ease: "power2.out" });
-    };
-
-    const handleMouseLeave = () => {
-      gsap.to(card, {
-        y: 0,
-        scale: 1,
-        boxShadow: "0 10px 15px -3px rgba(0, 0, 0, 0.1)",
-        duration: 0.5,
-        ease: "power2.out",
-      });
-      gsap.to(image, { scale: 1, duration: 0.8, ease: "power2.out" });
-    };
-
-    card.addEventListener("mouseenter", handleMouseEnter);
-    card.addEventListener("mouseleave", handleMouseLeave);
-
-    return () => {
-      card.removeEventListener("mouseenter", handleMouseEnter);
-      card.removeEventListener("mouseleave", handleMouseLeave);
-    };
-  }, []);
+  const displayUrl = project.live_link || project.source_code_link || "github.com";
 
   return (
     <div
-      ref={cardRef}
-      className={cn(
-        "project-card group relative bg-gray-900/50 backdrop-blur-sm rounded-2xl overflow-hidden border border-gray-700/50",
-        "will-change-transform"
-      )}
+      className="group project-card relative rounded-2xl overflow-hidden transition-all duration-500"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
+      onFocus={() => setIsHovered(true)}
+      onBlur={() => setIsHovered(false)}
     >
-      {/* Image Section */}
-      <div className="relative h-48 md:h-56 overflow-hidden">
-        <img
-          ref={imageRef}
-          src={project.image}
-          alt={project.name}
-          loading="lazy"
-          className="w-full h-full object-cover will-change-transform"
-        />
-        <div
-          className={cn(
-            "absolute inset-0 bg-gradient-to-t from-gray-900/80 via-transparent to-transparent",
-            "transition-opacity duration-300",
-            isHovered ? "opacity-60" : "opacity-40"
-          )}
-        />
+      {/* Card background with gradient border effect */}
+      <div className="absolute inset-0 rounded-2xl bg-gradient-to-b from-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
-        {/* Action Buttons */}
-        <div
-          className={cn(
-            "absolute top-4 right-4 flex gap-2 transition-all duration-300",
-            isHovered ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-2"
+      <div className="relative h-full bg-[#1a1a1a] border border-white/[0.08] rounded-2xl overflow-hidden group-hover:border-white/[0.15] transition-all duration-500">
+        {/* Browser chrome */}
+        <div className="flex items-center gap-2 px-4 py-3 bg-[#0d0d0d] border-b border-white/[0.06]" aria-hidden="true">
+          <div className="flex gap-1.5">
+            <div className="w-3 h-3 rounded-full bg-white/20" />
+            <div className="w-3 h-3 rounded-full bg-white/20" />
+            <div className="w-3 h-3 rounded-full bg-white/20" />
+          </div>
+          <div className="flex-1 mx-4">
+            <div className="flex items-center gap-2 px-3 py-1.5 bg-white/[0.05] rounded-md max-w-md">
+              <div className="w-3 h-3 rounded-full border border-white/20" />
+              <span className="text-[11px] text-white/50 truncate">
+                {displayUrl}
+              </span>
+            </div>
+          </div>
+        </div>
+
+        {/* Video / Image container */}
+        <div className="relative aspect-video">
+          {hasVideo ? (
+            <video
+              ref={videoRef}
+              src={project.video}
+              muted
+              loop
+              playsInline
+              className="w-full h-full object-cover"
+            />
+          ) : (
+            <img
+              src={project.image}
+              alt={project.name}
+              loading="lazy"
+              className="w-full h-full object-cover"
+            />
           )}
-        >
-          <a
-            href={project.source_code_link}
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label={`View source code for ${project.name} on GitHub`}
-            className="p-2 bg-gray-900/80 backdrop-blur-sm rounded-full border border-gray-600/50 hover:bg-gray-800/80 transition-colors"
-          >
-            <Github className="w-4 h-4 text-white" />
-          </a>
-          {project.live_link && (
+
+          {/* Play/Pause overlay */}
+          {hasVideo && (
+            <div
+              className={`absolute inset-0 flex items-center justify-center bg-black/40 transition-opacity duration-300 ${
+                isPlaying ? "opacity-0" : "opacity-100"
+              }`}
+            >
+              <button
+                onClick={togglePlay}
+                aria-label={isPlaying ? "Pause video" : "Play video"}
+                className="w-14 h-14 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 flex items-center justify-center hover:bg-white/20 transition-colors duration-200"
+              >
+                {isPlaying ? (
+                  <Pause className="w-6 h-6 text-white" />
+                ) : (
+                  <Play className="w-6 h-6 text-white ml-1" />
+                )}
+              </button>
+            </div>
+          )}
+
+          {/* Gradient overlay at bottom */}
+          <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-[#141414] to-transparent" />
+        </div>
+
+        {/* Content */}
+        <div className="p-5 bg-[#141414]">
+          <div className="flex items-start justify-between gap-4">
+            <div>
+              <h3 className="font-semibold text-white text-lg">{project.name}</h3>
+              <p className="mt-1.5 text-white/50 leading-relaxed text-sm">
+                {project.description}
+              </p>
+            </div>
+
             <a
-              href={project.live_link}
+              href={project.live_link || project.source_code_link}
               target="_blank"
               rel="noopener noreferrer"
-              aria-label={`View live demo of ${project.name}`}
-              className="p-2 bg-gray-900/80 backdrop-blur-sm rounded-full border border-gray-600/50 hover:bg-gray-800/80 transition-colors"
+              aria-label={`Open ${project.name}`}
+              className="shrink-0 w-9 h-9 rounded-full bg-white/[0.05] border border-white/[0.1] flex items-center justify-center hover:bg-white/[0.1] hover:border-white/[0.2] transition-all duration-200"
             >
-              <LinkIcon className="w-4 h-4 text-white" />
+              <ArrowUpRight className="w-4 h-4 text-white/70" aria-hidden="true" />
             </a>
-          )}
-        </div>
-      </div>
+          </div>
 
-      {/* Content Section */}
-      <div className="p-6 md:p-8">
-        <h3 className="text-xl md:text-2xl font-bold text-white mb-3 group-hover:text-green-400 transition-colors duration-300">
-          {project.name}
-        </h3>
-        <p className="text-gray-300 text-sm md:text-base leading-relaxed mb-6 line-clamp-3">
-          {project.description}
-        </p>
-        <div className="flex flex-wrap gap-2">
-          {project.tags.map((tag: string, tagIndex: number) => (
-            <TagBadge key={tagIndex} tag={tag} />
-          ))}
+          {/* Tags */}
+          <div className="mt-4 flex flex-wrap gap-2">
+            {project.tags.map((tag) => (
+              <span
+                key={tag}
+                className="px-2.5 py-1 text-[11px] font-medium text-white/50 bg-white/[0.05] rounded-md"
+              >
+                {tag}
+              </span>
+            ))}
+          </div>
         </div>
       </div>
     </div>

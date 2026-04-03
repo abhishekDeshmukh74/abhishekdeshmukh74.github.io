@@ -129,7 +129,7 @@ const ProjectsSection = () => {
         {/* Projects Grid */}
         <div
           ref={gridRef}
-          className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10 will-change-transform md:mx-auto'
+          className='grid grid-cols-1 md:grid-cols-2 gap-6 will-change-transform md:mx-auto'
         >
           {projects.map((project, index) => (
             <ProjectCard key={index} project={project} index={index} />

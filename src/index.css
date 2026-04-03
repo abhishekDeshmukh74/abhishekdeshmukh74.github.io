@@ -53,12 +53,44 @@
   --color-white-100: #f3f3f3;
 }
 
-*{
-  cursor : none;
-}
+
 
 ::-webkit-scrollbar {
   width: 4px;
+}
+
+/* Skip navigation link — visible only on focus */
+.skip-nav {
+  position: absolute;
+  top: -100%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 9999;
+  padding: 0.75rem 1.5rem;
+  background: #00f050;
+  color: #000;
+  font-weight: 700;
+  border-radius: 0 0 0.5rem 0.5rem;
+  transition: top 0.2s ease;
+}
+.skip-nav:focus {
+  top: 0;
+}
+
+/* Focus-visible ring for keyboard users */
+:focus-visible {
+  outline: 2px solid #00f050;
+  outline-offset: 2px;
+}
+
+/* Respect prefers-reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }
 
 ::-webkit-scrollbar-track {
@@ -79,7 +111,6 @@ body {
   background: #000000;
   height: 100%;
   width: 100%;
-  cursor: none;
   /* background: linear-gradient(to bottom, #111827, #000000); */
 }
 

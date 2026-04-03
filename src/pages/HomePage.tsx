@@ -9,26 +9,28 @@ import ProjectsSection from "../components/organisms/ProjectsSection";
 const HomePage = () => {
   return (
     <div className="w-full">
-      <Navbar />
+      <header>
+        <Navbar />
+      </header>
 
-      <main className="w-full">
-        <section id="home" className="min-h-screen">
+      <main id="main-content" className="w-full">
+        <section id="home" aria-label="Hero" className="min-h-screen">
           <HeroSection />
         </section>
 
-        <section id="about" className="min-h-screen py-10 sm:py-16">
+        <section id="about" aria-label="About Me" className="min-h-screen py-10 sm:py-16">
           <AboutSection />
         </section>
 
-        <section id="experience" className="py-10 sm:py-16">
+        <section id="experience" aria-label="Work Experience" className="py-10 sm:py-16">
           <ExperienceSection />
         </section>
 
-        <section id="skills">
+        <section id="skills" aria-label="Skills">
           <SkillsSection />
         </section>
 
-        <section id="projects" className="min-h-screen py-10 sm:py-16 md:py-20">
+        <section id="projects" aria-label="Projects" className="min-h-screen py-10 sm:py-16 md:py-20">
           <ProjectsSection />
         </section>
 
