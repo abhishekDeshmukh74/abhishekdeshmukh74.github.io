@@ -110,26 +110,6 @@ const MainLayout = ({ children }: MainLayoutProps) => {
         />
       </motion.div>
 
-      {/* Mobile email link */}
-      <motion.div
-        initial={{ opacity: 0, y: 50 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 1.2, duration: 0.8, ease: "easeInOut" }}
-        className="fixed bottom-4 left-1/2 -translate-x-1/2 z-30 sm:hidden font-montserrat"
-      >
-        <motion.a
-          href={`mailto:${profile.email}`}
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label={`Send email to ${profile.email}`}
-          className="text-gray-400 hover:text-pista font-montserrat text-xs tracking-wide transition-colors duration-300 cursor-pointer px-4 py-2 bg-black/20 backdrop-blur-sm rounded-full border border-gray-700/50"
-          whileHover={{ scale: 1.05, backgroundColor: "rgba(0, 240, 80, 0.1)" }}
-          whileTap={{ scale: 0.95 }}
-        >
-          {profile.email}
-        </motion.a>
-      </motion.div>
-
       {/* Green cursor glow (desktop only) — pointer-events-none so clicks pass through */}
       {!isMobile && (
         <motion.div

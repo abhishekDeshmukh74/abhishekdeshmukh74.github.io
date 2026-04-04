@@ -9,8 +9,10 @@ interface ProjectCardProps {
 
 const ProjectCard = ({ project, index }: ProjectCardProps) => {
   const videoRef = useRef<HTMLVideoElement>(null);
+  const cardRef = useRef<HTMLDivElement>(null);
   const [isPlaying, setIsPlaying] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
+  const [hasEntered, setHasEntered] = useState(false);
   const hasVideo = !!project.video;
 
   const togglePlay = () => {
@@ -35,20 +37,47 @@ const ProjectCard = ({ project, index }: ProjectCardProps) => {
     }
   }, [isHovered, hasVideo]);
 
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setHasEntered(true);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.1 }
+    );
+    if (cardRef.current) observer.observe(cardRef.current);
+    return () => observer.disconnect();
+  }, []);
+
   const displayUrl = project.live_link || project.source_code_link || "github.com";
 
   return (
     <div
-      className="group project-card relative rounded-2xl overflow-hidden transition-all duration-500"
+      ref={cardRef}
+      className="group project-card relative rounded-2xl p-[1px] transition-all duration-500"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
       onFocus={() => setIsHovered(true)}
       onBlur={() => setIsHovered(false)}
     >
-      {/* Card background with gradient border effect */}
-      <div className="absolute inset-0 rounded-2xl bg-gradient-to-b from-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+      {/* Static gradient border — fades in on scroll into view */}
+      <div
+        className={`absolute inset-0 rounded-2xl transition-opacity duration-700 ${hasEntered ? "opacity-100" : "opacity-0"}`}
+        style={{
+          background:
+            "linear-gradient(135deg, rgba(0,240,80,0.35) 0%, rgba(0,240,80,0.04) 50%, rgba(0,240,80,0.2) 100%)",
+        }}
+        aria-hidden="true"
+      />
+      {/* Spinning conic-gradient border on hover */}
+      <div
+        className="project-card-spin-border absolute inset-0 rounded-2xl"
+        aria-hidden="true"
+      />
 
-      <div className="relative h-full bg-[#1a1a1a] border border-white/[0.08] rounded-2xl overflow-hidden group-hover:border-white/[0.15] transition-all duration-500">
+      <div className="relative h-full bg-[#1a1a1a] rounded-[15px] overflow-hidden">
         {/* Browser chrome */}
         <div className="flex items-center gap-2 px-4 py-3 bg-[#0d0d0d] border-b border-white/[0.06]" aria-hidden="true">
           <div className="flex gap-1.5">

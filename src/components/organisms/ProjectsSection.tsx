@@ -26,7 +26,7 @@ const ProjectsSection = () => {
     const projectCards = gsap.utils.toArray<HTMLElement>(".project-card");
 
     gsap.set([title, subtitle, line, cta], { y: 100, opacity: 0, scale: 0.9 });
-    gsap.set(projectCards, { opacity: 0, rotationX: 20, rotationY: 10 });
+    gsap.set(projectCards, { opacity: 0, y: 40 });
 
     const headerTl = gsap.timeline({
       scrollTrigger: {
@@ -56,8 +56,6 @@ const ProjectsSection = () => {
         y: 0,
         opacity: 1,
         scale: 1,
-        rotationX: 0,
-        rotationY: 0,
         duration: 1.2,
         ease: "power3.out",
         scrollTrigger: {
