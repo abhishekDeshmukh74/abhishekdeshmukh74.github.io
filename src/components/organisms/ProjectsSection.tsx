@@ -101,14 +101,14 @@ const ProjectsSection = () => {
       ref={sectionRef}
       className='w-full min-h-screen py-20 px-4 md:px-8 will-change-transform'
     >
-      <div className='max-w-7xl mx-4 md:mx-auto'>
+      <div className='max-w-7xl mx-auto px-4 md:px-8'>
         {/* Header */}
         <div className='text-center mb-16'>
           <h2
             ref={titleRef}
             className='text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-pista font-montserrat-extrabold mb-6 will-change-transform'
           >
-            Featured Projects
+            Projects
           </h2>
           <p
             ref={subtitleRef}

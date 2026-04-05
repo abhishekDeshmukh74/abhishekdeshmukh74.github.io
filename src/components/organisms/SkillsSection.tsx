@@ -59,12 +59,14 @@ const SkillsSection = () => {
   const secondRow = skillSet.slice(skillSet.length / 2);
 
   return (
-    <section ref={skillRef} className="relative z-10">
-      <SectionHeading
-        title="SKILLS"
-        headingClassName="skill-heading"
-        hrClassName="skill-hr"
-      />
+    <section ref={skillRef} className="relative z-10 pt-16 pb-0">
+      <div className="px-4">
+        <SectionHeading
+          title="SKILLS"
+          headingClassName="skill-heading"
+          hrClassName="skill-hr"
+        />
+      </div>
 
       <div className="w-full min-h-screen overflow-hidden">
         <div className="relative flex h-screen w-full flex-row items-center justify-center overflow-hidden [perspective:800px]">

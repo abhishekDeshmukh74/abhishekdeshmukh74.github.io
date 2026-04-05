@@ -71,6 +71,12 @@ const MainLayout = ({ children }: MainLayoutProps) => {
 
   return (
     <div className="relative min-h-screen overflow-x-hidden">
+      {/* Ambient glow orbs */}
+      <div aria-hidden="true" className="pointer-events-none fixed inset-0 z-0 overflow-hidden">
+        <div className="absolute -top-40 -left-40 w-[600px] h-[600px] rounded-full bg-[#00f050]/5 blur-[120px]" />
+        <div className="absolute top-1/3 -right-60 w-[500px] h-[500px] rounded-full bg-[#00f050]/4 blur-[100px]" />
+        <div className="absolute bottom-0 left-1/4 w-[400px] h-[400px] rounded-full bg-[#00f050]/3 blur-[90px]" />
+      </div>
       {/* Desktop: right-side vertical progress bar */}
       <motion.div
         initial={{ opacity: 0 }}
