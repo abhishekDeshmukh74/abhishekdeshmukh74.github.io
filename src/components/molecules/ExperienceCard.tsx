@@ -23,14 +23,14 @@ const ExperienceCard = ({ experience }: ExperienceCardProps) => {
         </div>
         <div className="flex-1 min-w-0">
           <div className="flex flex-wrap items-start justify-between gap-x-3 gap-y-1">
-            <h3 className="text-white font-semibold text-base sm:text-lg leading-tight">
+            <h3 className="text-white font-bold text-base sm:text-lg leading-snug tracking-wide">
               {experience.title}
             </h3>
             <span className="text-gray-400 text-sm font-spacemono whitespace-nowrap flex-shrink-0">
               {experience.date}
             </span>
           </div>
-          <p className="text-pista text-sm font-montserrat mt-0.5">
+          <p className="text-pista text-sm font-montserrat-extrabold mt-1 tracking-wide">
             {experience.company_name}
           </p>
         </div>
@@ -41,7 +41,7 @@ const ExperienceCard = ({ experience }: ExperienceCardProps) => {
         {experience.points.map((point: string, i: number) => (
           <li key={i} className="flex items-start gap-3">
             <span className="mt-2 w-1.5 h-1.5 rounded-full bg-pista flex-shrink-0" aria-hidden="true" />
-            <p className="text-gray-300 text-sm md:text-base leading-relaxed font-montserrat">
+            <p className="text-gray-200 text-sm md:text-base leading-relaxed font-montserrat tracking-wide">
               {point}
             </p>
           </li>

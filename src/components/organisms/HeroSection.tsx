@@ -48,16 +48,36 @@ const HeroSection = () => {
           <motion.div
             animate={{ y: [0, -10, 0] }}
             transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-            className="relative"
+            className="relative group cursor-pointer"
           >
-            <div className="w-52 h-52 sm:w-64 sm:h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 rounded-full p-1 bg-gradient-to-br from-pista via-teal-400 to-purple-500 shadow-[0_0_40px_rgba(16,185,129,0.4)]">
-              <img
-                src={me}
-                alt={profile.name}
-                loading="eager"
-                className="w-full h-full rounded-full object-cover object-top"
-              />
-            </div>
+            {/* Outer ambient glow — always present, intensifies on hover */}
+            <div className="absolute -inset-4 rounded-full bg-pista/10 blur-2xl group-hover:bg-pista/25 transition-all duration-700" />
+
+            <motion.div
+              whileHover={{ scale: 1.03 }}
+              transition={{ duration: 0.5, ease: "easeOut" }}
+              className="relative w-52 h-52 sm:w-64 sm:h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 rounded-full p-1 bg-gradient-to-br from-pista via-teal-400 to-purple-500 shadow-[0_0_40px_rgba(16,185,129,0.4)] group-hover:shadow-[0_0_80px_rgba(0,240,80,0.5)] transition-shadow duration-700 overflow-hidden"
+            >
+              <div className="relative w-full h-full rounded-full overflow-hidden">
+                <img
+                  src={me}
+                  alt={profile.name}
+                  loading="eager"
+                  className="w-full h-full rounded-full object-cover object-top group-hover:scale-105 transition-transform duration-700 ease-out"
+                />
+                {/* Frosted reveal overlay */}
+                <div className="absolute inset-0 rounded-full flex flex-col items-center justify-end pb-8 translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out bg-gradient-to-t from-black/80 via-black/40 to-transparent">
+                  <p className="text-pista text-xs sm:text-sm font-montserrat-extrabold tracking-widest uppercase opacity-0 group-hover:opacity-100 transition-opacity delay-200 duration-300">
+                    {profile.name}
+                  </p>
+                  <p className="text-white/70 text-[10px] sm:text-xs font-montserrat tracking-wider mt-1 opacity-0 group-hover:opacity-100 transition-opacity delay-300 duration-300">
+                    Full-Stack · Gen AI
+                  </p>
+                </div>
+                {/* Shimmer sweep */}
+                <div className="absolute inset-0 rounded-full -translate-x-full group-hover:translate-x-full transition-transform duration-700 ease-in-out bg-gradient-to-r from-transparent via-white/10 to-transparent pointer-events-none" />
+              </div>
+            </motion.div>
           </motion.div>
         </motion.div>
 
@@ -66,7 +86,7 @@ const HeroSection = () => {
           initial={{ y: 100, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 1, ease: "easeOut", delay: 0.2 }}
-          className="text-center md:text-left space-y-6 order-2 md:order-1"
+          className="text-center md:text-left space-y-7 order-2 md:order-1 max-w-xl"
         >
           <motion.h1
             variants={titleVariants}
@@ -97,7 +117,7 @@ const HeroSection = () => {
           </motion.h1>
 
           <motion.h2
-            className="text-white text-2xl sm:text-3xl md:text-4xl font-montserrat-extrabold"
+            className="text-white/90 text-2xl sm:text-3xl md:text-4xl font-montserrat-extrabold leading-snug tracking-wide"
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, delay: 0.8, ease: "easeOut" }}
@@ -128,7 +148,7 @@ const HeroSection = () => {
 
           <motion.p
             variants={itemVariants}
-            className="text-gray-300 max-w-lg leading-relaxed font-montserrat text-base sm:text-lg"
+            className="text-gray-200 max-w-xl leading-[1.85] font-montserrat text-base sm:text-lg md:text-xl"
           >
             8+ years building production-grade apps, from scalable{" "}
             <motion.span

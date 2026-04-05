@@ -65,11 +65,12 @@ const SkillsSection = () => {
           title="SKILLS"
           headingClassName="skill-heading"
           hrClassName="skill-hr"
+          showHr={false}
         />
       </div>
 
-      <div className="w-full min-h-screen overflow-hidden">
-        <div className="relative flex h-screen w-full flex-row items-center justify-center overflow-hidden [perspective:800px]">
+      <div className="w-full overflow-hidden">
+        <div className="relative flex h-[560px] sm:h-[640px] w-full flex-row items-center justify-center overflow-hidden [perspective:800px]">
           <div
             className="flex flex-col items-center gap-6 md:gap-8 w-full"
             style={{
@@ -81,7 +82,7 @@ const SkillsSection = () => {
               <Marquee
                 reverse
                 pauseOnHover={false}
-                className="[--duration:30s] py-2"
+                className="[--duration:20s] py-1"
                 vertical={false}
               >
                 {firstRow.map((item) => (
@@ -93,7 +94,7 @@ const SkillsSection = () => {
               <Marquee
                 pauseOnHover={false}
                 vertical={false}
-                className="[--duration:25s] py-2"
+                className="[--duration:16s] py-1"
               >
                 {secondRow.map((item) => (
                   <SkillCard key={item.name} {...item} />
@@ -108,7 +109,7 @@ const SkillsSection = () => {
           <div className="pointer-events-none absolute inset-y-0 right-0 w-20 bg-transparent" />
         </div>
       </div>
-      <div className="h-24" />
+      <div className="h-8" />
     </section>
   );
 };

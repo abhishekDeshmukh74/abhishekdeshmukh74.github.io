@@ -26,7 +26,7 @@ const HomePage = () => {
 
         <div aria-hidden="true" className="h-px bg-gradient-to-r from-transparent via-[#00f050]/30 to-transparent mx-8 sm:mx-16" />
 
-        <section id="experience" aria-label="Work Experience" className="py-10 sm:py-16 scroll-mt-20 sm:scroll-mt-24">
+        <section id="experience" aria-label="Work Experience" className="py-10 sm:py-16 scroll-mt-16">
           <ExperienceSection />
         </section>
 
@@ -38,7 +38,7 @@ const HomePage = () => {
 
         <div aria-hidden="true" className="h-px bg-gradient-to-r from-transparent via-[#00f050]/30 to-transparent mx-8 sm:mx-16" />
 
-        <section id="projects" aria-label="Projects" className="min-h-screen py-10 sm:py-16 md:py-20 scroll-mt-20 sm:scroll-mt-24">
+        <section id="projects" aria-label="Projects" className="min-h-screen py-10 sm:py-16 md:py-20 scroll-mt-4">
           <ProjectsSection />
         </section>
 

@@ -103,7 +103,7 @@ const ProjectsSection = () => {
     >
       <div className='max-w-7xl mx-auto px-4 md:px-8'>
         {/* Header */}
-        <div className='text-center mb-16'>
+        <div className='text-center mb-8'>
           <h2
             ref={titleRef}
             className='text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-pista font-montserrat-extrabold mb-6 will-change-transform'
@@ -116,7 +116,7 @@ const ProjectsSection = () => {
           >
             A selection of projects spanning full-stack development, Gen AI integrations, and modern web experiences
           </p>
-          <div className='mt-8 flex justify-center'>
+          <div className='flex justify-center'>
             <div
               ref={lineRef}
               className='h-px w-24 bg-gradient-to-r from-transparent via-green-500 to-transparent origin-center will-change-transform'

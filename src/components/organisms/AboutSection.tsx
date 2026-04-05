@@ -87,7 +87,7 @@ const AboutSection = () => {
           headingClassName="about-heading"
           hrClassName="about-hr"
         />
-        <p className="about-text text-base sm:text-lg md:text-xl leading-loose text-gray-300 font-montserrat text-start">
+        <p className="about-text text-base sm:text-lg md:text-xl leading-[2] text-gray-200 font-montserrat text-start tracking-wide">
           {splitText(about)}
         </p>
       </div>

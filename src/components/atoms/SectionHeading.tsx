@@ -4,12 +4,14 @@ interface SectionHeadingProps {
   title: string;
   headingClassName?: string;
   hrClassName?: string;
+  showHr?: boolean;
 }
 
 const SectionHeading = ({
   title,
   headingClassName = "",
   hrClassName = "",
+  showHr = true,
 }: SectionHeadingProps) => {
   return (
     <>
@@ -20,10 +22,12 @@ const SectionHeading = ({
         <span className="text-[#00f050]"> {title} </span>
         <span className="text-white/30 font-light" aria-hidden="true">/&gt;</span>
       </h2>
-      <hr
-        className={`border-[#00f050] border-t-2 w-24 my-6 mx-auto ${hrClassName}`}
-        aria-hidden="true"
-      />
+      {showHr && (
+        <hr
+          className={`border-[#00f050] border-t-2 w-24 my-6 mx-auto ${hrClassName}`}
+          aria-hidden="true"
+        />
+      )}
     </>
   );
 };

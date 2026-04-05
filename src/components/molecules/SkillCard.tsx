@@ -20,7 +20,7 @@ const SkillCard = ({ img, name }: SkillItem) => {
           src={img}
           loading="lazy"
         />
-        <figcaption className="text-sm font-medium text-white text-center leading-tight">
+        <figcaption className="text-sm font-semibold text-gray-100 text-center leading-snug tracking-wide">
           {name}
         </figcaption>
       </div>
