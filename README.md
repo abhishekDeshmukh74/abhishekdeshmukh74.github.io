@@ -1,6 +1,6 @@
 # Abhishek Deshmukh — Personal Portfolio
 
-A modern, animated personal portfolio website built with **React 19**, **TypeScript**, **Vite**, and **Tailwind CSS v4**. Showcases professional experience, projects, and skills with smooth animations and a polished UI.
+A modern, animated personal portfolio website built that showcases professional experience, projects, and skills.
 
 🌐 **Live site:** [abhishekdeshmukh.com](https://www.abhishekdeshmukh.com)
 
