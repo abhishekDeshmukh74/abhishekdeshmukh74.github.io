@@ -12,6 +12,7 @@ const stockSeller      = '/assets/projects/stock-seller.png';
 const amazonClone      = '/assets/projects/amazon-clone.png';
 const prReviewerAgent  = '/assets/projects/pr-reviewer-agent.png';
 const passAts          = '/assets/projects/pass-ats.png';
+const learnEasily      = '/assets/projects/learn-easily.png';
 const brototype    = '/assets/tools/brototype.png';
 const web          = '/assets/tools/web.png';
 const extentia     = '/assets/extentia.jpg';
@@ -173,6 +174,16 @@ export const experiences: Experience[] = [
 
 export const projects: Project[] = [
     {
+        name: "Learn Easily",
+        description: "An interactive web app for learning technical concepts step-by-step with 3D visualizations, animations, and deep-dive educational content. Covers topics like AI & ML, Algorithms, Databases, and System Design.",
+        tags: ["React", "TypeScript", "Three.js", "React Three Fiber", "TailwindCSS", "Framer Motion"],
+        image: learnEasily,
+        video: "/assets/projects/learn-easily.mov",
+        source_code_link: "https://github.com/abhishekDeshmukh74/learn-easily",
+        live_link: "https://learn-easily.vercel.app/",
+        category: "Full Stack",
+    },
+    {
         name: "Pass ATS",
         description: "An AI-powered ATS resume tailor — upload your resume (PDF or LaTeX), paste or URL a job description, and a 7-agent LangGraph pipeline rewrites your resume to be ATS-optimised. The pipeline extracts keywords, analyses gaps, rewrites in-place, QA validates, scores before and after, and produces a final PDF — all powered by Groq (llama-3.3-70b) or Gemini.",
         tags: ["React", "TypeScript", "Python", "FastAPI", "LangGraph", "Groq AI", "MongoDB"],
@@ -199,23 +210,23 @@ export const projects: Project[] = [
         live_link: "https://stock-seller.vercel.app/",
         category: "Full Stack",
     },
-    {
-        name: "Amazon Clone",
-        description: "A full-featured e-commerce web app inspired by Amazon, built with Next.js, Redux Toolkit, Firebase, NextAuth, Tailwind CSS, and Stripe. Features Google & email authentication, dynamic product listings, Redux-powered cart, secure Stripe checkout with webhooks, order tracking, and SSR for SEO and performance.",
-        tags: ["Next.js", "Redux Toolkit", "Firebase", "Stripe", "TailwindCSS", "NextAuth"],
-        image: amazonClone,
-        source_code_link: "https://github.com/abhishekDeshmukh74/amazon-clone",
-        live_link: "https://amazon-clone-beige-six.vercel.app/",
-        category: "Full Stack",
-    },
-    {
-        name: "Google Docs Clone",
-        description: "A real-time collaborative document editor inspired by Google Docs, built with React, Quill rich-text editor, Socket.io for live collaboration, and MongoDB for document persistence.",
-        tags: ["React JS", "Socket.io", "MongoDB", "Node.js", "Express", "JavaScript"],
-        image: codblog,
-        source_code_link: "https://github.com/abhishekDeshmukh74/google-docs-clone",
-        category: "Full Stack",
-    },
+    // {
+    //     name: "Amazon Clone",
+    //     description: "A full-featured e-commerce web app inspired by Amazon, built with Next.js, Redux Toolkit, Firebase, NextAuth, Tailwind CSS, and Stripe. Features Google & email authentication, dynamic product listings, Redux-powered cart, secure Stripe checkout with webhooks, order tracking, and SSR for SEO and performance.",
+    //     tags: ["Next.js", "Redux Toolkit", "Firebase", "Stripe", "TailwindCSS", "NextAuth"],
+    //     image: amazonClone,
+    //     source_code_link: "https://github.com/abhishekDeshmukh74/amazon-clone",
+    //     live_link: "https://amazon-clone-beige-six.vercel.app/",
+    //     category: "Full Stack",
+    // },
+    // {
+    //     name: "Google Docs Clone",
+    //     description: "A real-time collaborative document editor inspired by Google Docs, built with React, Quill rich-text editor, Socket.io for live collaboration, and MongoDB for document persistence.",
+    //     tags: ["React JS", "Socket.io", "MongoDB", "Node.js", "Express", "JavaScript"],
+    //     image: codblog,
+    //     source_code_link: "https://github.com/abhishekDeshmukh74/google-docs-clone",
+    //     category: "Full Stack",
+    // },
     // {
     //     name: "Slack Clone",
     //     description: "A feature-rich Slack Clone built with ReactJS, Redux for state management, Styled Components for theming, and Firebase for real-time messaging and authentication.",
