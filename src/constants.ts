@@ -184,6 +184,16 @@ export const projects: Project[] = [
         category: "Full Stack",
     },
     {
+        name: "Stock Seller",
+        description: "A Next.js application for stock price monitoring, analysis, and automated trading recommendations with real-time notifications. Tracks NSE and US markets, provides DMA analysis, volatility stop-loss calculations, watchlist management, and smart buy/sell recommendations powered by batch processing and Firebase Cloud Messaging.",
+        tags: ["Next.js", "TypeScript", "MongoDB", "React", "TailwindCSS", "Firebase"],
+        image: stockSeller,
+        video: "/assets/projects/stock-seller.mov",
+        source_code_link: "https://github.com/abhishekDeshmukh74/stock-seller",
+        live_link: "https://stock-seller.vercel.app/",
+        category: "Full Stack",
+    },
+    {
         name: "Pass ATS",
         description: "An AI-powered ATS resume tailor — upload your resume (PDF or LaTeX), paste or URL a job description, and a 7-agent LangGraph pipeline rewrites your resume to be ATS-optimised. The pipeline extracts keywords, analyses gaps, rewrites in-place, QA validates, scores before and after, and produces a final PDF — all powered by Groq (llama-3.3-70b) or Gemini.",
         tags: ["React", "TypeScript", "Python", "FastAPI", "LangGraph", "Groq AI", "MongoDB"],
@@ -200,15 +210,6 @@ export const projects: Project[] = [
         source_code_link: "https://github.com/abhishekDeshmukh74/pr-reviewer-agent",
         live_link: "https://pr-reviewer-web.onrender.com/",
         category: "Gen AI",
-    },
-    {
-        name: "Stock Seller",
-        description: "A Next.js application for stock price monitoring, analysis, and automated trading recommendations with real-time notifications. Tracks NSE and US markets, provides DMA analysis, volatility stop-loss calculations, watchlist management, and smart buy/sell recommendations powered by batch processing and Firebase Cloud Messaging.",
-        tags: ["Next.js", "TypeScript", "MongoDB", "React", "TailwindCSS", "Firebase"],
-        image: stockSeller,
-        source_code_link: "https://github.com/abhishekDeshmukh74/stock-seller",
-        live_link: "https://stock-seller.vercel.app/",
-        category: "Full Stack",
     },
     // {
     //     name: "Amazon Clone",
@@ -266,14 +267,6 @@ export const projects: Project[] = [
     //     image: nike,
     //     source_code_link: "https://github.com/abhishekDeshmukh74/abhishek-deshmukh-web",
     //     live_link: "https://www.abhishekdeshmukh.com",
-    //     category: "Frontend",
-    // },
-    // {
-    //     name: "Cron Parser",
-    //     description: "A TypeScript utility for parsing and interpreting cron expressions. Takes a cron string and expands each field, outputting the schedule in a readable format — useful for validating and understanding scheduled tasks.",
-    //     tags: ["TypeScript", "Node.js"],
-    //     image: rdcrud,
-    //     source_code_link: "https://github.com/abhishekDeshmukh74/cron-parser",
     //     category: "Frontend",
     // },
 ];
