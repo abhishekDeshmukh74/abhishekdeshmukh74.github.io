@@ -12,6 +12,7 @@ const stockSeller      = '/assets/projects/stock-seller.png';
 const amazonClone      = '/assets/projects/amazon-clone.png';
 const prReviewerAgent  = '/assets/projects/pr-reviewer-agent.png';
 const passAts          = '/assets/projects/pass-ats.png';
+const cleanMailbox     = '/assets/projects/clean-mailbox.png';
 const learnEasily      = '/assets/projects/learn-easily.png';
 const brototype    = '/assets/tools/brototype.png';
 const web          = '/assets/tools/web.png';
@@ -194,23 +195,32 @@ export const projects: Project[] = [
         category: "Full Stack",
     },
     {
-        name: "Pass ATS",
+        name: "ATS-Resume",
         description: "An AI-powered ATS resume tailor — upload your resume (PDF or LaTeX), paste or URL a job description, and a 7-agent LangGraph pipeline rewrites your resume to be ATS-optimised. The pipeline extracts keywords, analyses gaps, rewrites in-place, QA validates, scores before and after, and produces a final PDF — all powered by Groq (llama-3.3-70b) or Gemini.",
         tags: ["React", "TypeScript", "Python", "FastAPI", "LangGraph", "Groq AI", "MongoDB"],
         image: passAts,
-        source_code_link: "https://github.com/abhishekDeshmukh74/pass-ats",
+        source_code_link: "https://github.com/abhishekDeshmukh74/ATS-resume",
         live_link: "https://pass-ats.onrender.com/",
         category: "Gen AI",
     },
     {
-        name: "PR Reviewer Agent",
-        description: "A monorepo with a React (Vite + TypeScript) frontend and Python FastAPI + LangGraph backend that reviews pull request diffs using a multi-agent AI pipeline. Paste a diff or GitHub PR URL to get real-time, grouped code review comments across bugs, security, performance, and readability — powered by LangChain and OpenAI with SSE streaming.",
-        tags: ["React", "TypeScript", "Python", "FastAPI", "LangGraph", "LangChain", "OpenAI"],
-        image: prReviewerAgent,
-        source_code_link: "https://github.com/abhishekDeshmukh74/pr-reviewer-agent",
-        live_link: "https://pr-reviewer-web.onrender.com/",
+        name: "Clean Mailbox",
+        description: "AI-powered Gmail organizer — a Turborepo monorepo with a Vite + React frontend and FastAPI backend running a multi-agent system (LangGraph + LiteLLM, Ollama by default) that classifies and labels your inbox. Never deletes: the labeler agent only adds labels.",
+        tags: ["React", "TypeScript", "Python", "FastAPI", "LangGraph", "LiteLLM", "Turborepo"],
+        image: cleanMailbox,
+        video: "/assets/projects/clean-mailbox.mov",
+        source_code_link: "https://github.com/abhishekDeshmukh74/clean-mailbox",
         category: "Gen AI",
     },
+    // {
+    //     name: "PR Reviewer Agent",
+    //     description: "A monorepo with a React (Vite + TypeScript) frontend and Python FastAPI + LangGraph backend that reviews pull request diffs using a multi-agent AI pipeline. Paste a diff or GitHub PR URL to get real-time, grouped code review comments across bugs, security, performance, and readability — powered by LangChain and OpenAI with SSE streaming.",
+    //     tags: ["React", "TypeScript", "Python", "FastAPI", "LangGraph", "LangChain", "OpenAI"],
+    //     image: prReviewerAgent,
+    //     source_code_link: "https://github.com/abhishekDeshmukh74/pr-reviewer-agent",
+    //     live_link: "https://pr-reviewer-web.onrender.com/",
+    //     category: "Gen AI",
+    // },
     // {
     //     name: "Amazon Clone",
     //     description: "A full-featured e-commerce web app inspired by Amazon, built with Next.js, Redux Toolkit, Firebase, NextAuth, Tailwind CSS, and Stripe. Features Google & email authentication, dynamic product listings, Redux-powered cart, secure Stripe checkout with webhooks, order tracking, and SSR for SEO and performance.",
